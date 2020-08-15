@@ -19,11 +19,11 @@ namespace DMETestApp.Classes
             LargePictureAddress = data.Picture.Large;
         }
         public enum Genders { Male = 0, Female = 1, Other = 666 };
-        public Genders Gender { get; set; }
-        public string Name { get; set; }
-        public string SecondName { get; set; }
-        public string Email { get; set; }
-        public string Phone { get; set; }
+        public Genders Gender { get; private set; }
+        public string Name { get; private set; }
+        public string SecondName { get; private set; }
+        public string Email { get; private set; }
+        public string Phone { get; private set; }
         Bitmap p = null;
         public Bitmap Picture
         {

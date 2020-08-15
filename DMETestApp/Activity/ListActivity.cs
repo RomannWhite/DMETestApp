@@ -26,11 +26,10 @@ namespace DMETestApp.Activity
             FilterText = FindViewById<EditText>(Resource.Id.FilterText);
             ClearFilterText = FindViewById<ImageButton>(Resource.Id.ClearFilterText);
             UsersListPlace = FindViewById<ListView>(Resource.Id.UsersListPlace);
-            Controller = new ListActivityController(this);
             FilterText.TextChanged += FilterText_TextChanged;
             Controller.SetAdapter += Controller_SetAdapter;
             ClearFilterText.Click += ClearFilterText_Click;
-            Controller.Initialize();
+            Controller = new ListActivityController(this);
         }
         protected override void OnResume()
         {

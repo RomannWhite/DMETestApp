@@ -15,6 +15,7 @@ namespace DMETestApp.Controllers
             Adapter = Model.GetUserListAdapter(Activity);
             Adapter.Selected += Adapter_Selected;
             Adapter.LongSelected += Adapter_LongSelected;
+            SetAdapter?.Invoke(Adapter);
         }
         void Adapter_Selected(User selected)
         {
@@ -25,10 +26,6 @@ namespace DMETestApp.Controllers
         void Adapter_LongSelected(User selected)
         {
             new Fragments.UserCommunicateFragment(selected, Activity).Show(Activity.FragmentManager, "dialog");
-        }
-        public void Initialize()
-        {
-            SetAdapter?.Invoke(Adapter);
         }
         public void Filter(string text)
         {
